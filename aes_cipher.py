@@ -21,5 +21,5 @@ if __name__ == '__main__':
                 print("Ciphertext: %s" % ciphertext.get("ciphertext", "-"))
             elif argv[1].upper() == "CTR":
                 print("Key: %s" % ciphertext.get("key", "-"))
-                print("IV: %s" % ciphertext.get("iv", "-"))
+                print("Nonce: %s" % ciphertext.get("nonce", "-"))
                 print("Ciphertext: %s" % ciphertext.get("ciphertext", "-"))

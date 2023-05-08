@@ -28,11 +28,18 @@ class AESCipher():
             plaintext += pad * chr(pad)
             iv = Random.new().read(self.bs)
             cipher = AES.new(key, AES.MODE_CBC, iv)
+        elif mode.upper() == "CTR":
+            cipher = AES.new(key, AES.MODE_CTR)
         ciphertext = cipher.encrypt(plaintext.encode())
         if mode.upper() == "CBC":
             data = {
                     'key': binascii.hexlify(key).decode(),
                     'iv': binascii.hexlify(iv).decode(),
+                    'ciphertext': binascii.hexlify(ciphertext).decode()
+            }
+        elif mode.upper() == "CTR":
+            data = {
+                    'key': binascii.hexlify(key).decode(),
                     'ciphertext': binascii.hexlify(ciphertext).decode()
             }
         else:
