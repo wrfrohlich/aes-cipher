@@ -15,11 +15,5 @@ if __name__ == '__main__':
         if ciphertext is None:
             print("Incorrect encryption")
         else:
-            if argv[1].upper() == "CBC":
-                print("Key: %s" % ciphertext.get("key", "-"))
-                print("IV: %s" % ciphertext.get("iv", "-"))
-                print("Ciphertext: %s" % ciphertext.get("ciphertext", "-"))
-            elif argv[1].upper() == "CTR":
-                print("Key: %s" % ciphertext.get("key", "-"))
-                print("Nonce: %s" % ciphertext.get("nonce", "-"))
-                print("Ciphertext: %s" % ciphertext.get("ciphertext", "-"))
+            print("Key: %s" % ciphertext.get("key", "-"))
+            print("Ciphertext: %s" % ciphertext.get("ciphertext", "-"))
